@@ -1,0 +1,10 @@
+<li
+    [ngClass]="{'list-group-item': true, 'list-group-item-success': postData.loveIts > 0, 'list-group-item-danger': postData.loveIts < 0}">
+    <div class="row">
+        <h4 class="col-lg-8">{{postData.title}}</h4>
+        <h6 class="col-lg-4 date">{{postData.created_at | date:'short'}}</h6>
+    </div>
+    <p>{{postData.content}}</p>
+    <button (click)="postData.loveIts = postData.loveIts + 1">LIKE</button>
+    <button (click)="postData.loveIts = postData.loveIts - 1">DISLIKE</button>
+</li>
